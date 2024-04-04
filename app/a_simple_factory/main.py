@@ -19,7 +19,7 @@ class Animal(metaclass=ABCMeta):
     """
 
     @abstractmethod
-    def do_say(self):
+    def diz(self):
         """
         Método abstrato que define o som que o animal faz.
         """
@@ -28,14 +28,14 @@ class Animal(metaclass=ABCMeta):
 
 class Cachorro(Animal):
     """Uma classe que representa um cachorro."""
-    def do_say(self):
+    def diz(self):
         """Exibe na tela o som que um cachorro faz."""
         print("Au-au")
 
 
 class Gato(Animal):
     """Uma classe que representa um gato."""
-    def do_say(self):
+    def diz(self):
         """Exibe na tela o som que um gato faz."""
         print("Miau")
 
@@ -45,7 +45,7 @@ class PetFactory(object):
     Uma classe de fábrica para criar objetos de animais em uma floresta.
     """
 
-    def make_sound(self, object_type: str):
+    def emite_som(self, object_type: str):
         """
         Cria um objeto de animal do tipo especificado e faz ele emitir seu som.
 
@@ -59,7 +59,7 @@ class PetFactory(object):
             Exception: Se o object_type especificado não for um tipo de animal válido.
         """
         try:
-            return eval(object_type.title())().do_say()
+            return eval(object_type.title())().diz()
         except:
             print("Erro! Animal desconhecido!")
 
@@ -67,4 +67,4 @@ class PetFactory(object):
 def run() -> None:
     ff = PetFactory()
     animal = input("Qual animal deve emitir som? Cachorro ou Gato?: ")
-    ff.make_sound(animal)
+    ff.emite_som(animal)
