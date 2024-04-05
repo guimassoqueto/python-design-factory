@@ -1,3 +1,23 @@
+"""
+O padrão de projeto Abstract Factory, em design de software, é um padrão criacional que
+fornece uma interface para criar famílias de objetos relacionados ou dependentes sem especificar
+suas classes concretas. Esse padrão é fundamentalmente sobre criar fábricas de fábricas; ou seja,
+uma fábrica abstrata define uma interface para criar várias fábricas, cada uma capaz de criar diferentes
+objetos dentro de uma família de produtos.
+
+A ideia principal é isolar a criação dos objetos da sua utilização, permitindo que sistemas sejam configurados
+com múltiplas famílias de produtos, sem a necessidade de modificar o código que utiliza os produtos.
+Isso é particularmente útil para bibliotecas e frameworks onde os detalhes de implementação dos objetos
+criados não devem ser expostos ao código cliente.
+
+O padrão Abstract Factory permite que um sistema seja independente de como seus produtos são criados,
+compostos e representados. Ele promove a consistência entre produtos, já que todos os objetos de uma
+família são garantidos para trabalhar juntos. É especialmente útil em casos onde um sistema deve ser
+configurado com uma entre várias famílias de produtos, fornecendo uma maneira de configurar o sistema
+com a família apropriada.
+"""
+
+
 from  abc import ABCMeta, abstractmethod
 
 
